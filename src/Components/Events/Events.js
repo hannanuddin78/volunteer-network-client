@@ -6,7 +6,7 @@ const Events = (props) => {
 
   const handleCancel = (event, id) => {
     console.log(id);
-    fetch("http://localhost:5000/delete/" + id, {
+    fetch("https://rocky-fortress-91922.herokuapp.com/delete/" + id, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -18,24 +18,26 @@ const Events = (props) => {
   };
 
   return (
-    <Col md={6}>
-      <Card className="event-container">
-        <Row>
-          <Col md={4}>
-            <img src={img} alt="" />
-          </Col>
-          <Col md={5} className="event-container-detail">
-            <h4>{title}</h4>
-            <h6>{date}</h6>
-          </Col>
-          <Col md={3}>
-            <Button onClick={(e) => handleCancel(e, _id)} variant="secondary">
-              Cancel
-            </Button>
-          </Col>
-        </Row>
-      </Card>
-    </Col>
+    <>
+      <Col md={6}>
+        <Card className="event-container">
+          <Row>
+            <Col md={4}>
+              <img src={img} alt="" />
+            </Col>
+            <Col md={5} className="event-container-detail">
+              <h4>{title}</h4>
+              <h6>{date}</h6>
+            </Col>
+            <Col md={3}>
+              <Button onClick={(e) => handleCancel(e, _id)} variant="secondary">
+                Cancel
+              </Button>
+            </Col>
+          </Row>
+        </Card>
+      </Col>
+    </>
   );
 };
 

@@ -107,6 +107,18 @@ img {
 .card-body-title {
   text-decoration: none;
 }
+.menubar-nav a {
+  margin-right: 40px;
+}
+.event-navber {
+  margin-top: 40px;
+}
 a {
   text-decoration: none;
+}
+.header-event-navber {
+  margin-top: 20px;
+}
+.button-pd {
+  padding: 5px 29px !important;
 }

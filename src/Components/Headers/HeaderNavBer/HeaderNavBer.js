@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Col, Nav, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import logo from "../../../image/logo.png";
 
 const HeaderNavBer = () => {
@@ -9,21 +10,27 @@ const HeaderNavBer = () => {
         <img src={logo} alt="" />
       </Col>
       <Col md={8}>
-        <Nav className="float-right">
-          <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/donation">Donation</Nav.Link>
-          <Nav.Link href="/event">Events</Nav.Link>
-          <Nav.Link href="/blog">Blog</Nav.Link>
+        <Nav className="menubar-nav header-event-navber float-right">
+          <Link to="/home">Home</Link>
+          <Link to="/donation/">Donation</Link>
+          <Link to="/event">Events</Link>
+          <Link to="/blog">Blog</Link>
           <Button
             variant="primary"
             size="sm"
-            className="navBer-btn btn-margin-right"
+            className="button-pd navBer-btn btn-margin-right"
           >
             Register
           </Button>
-          <Button variant="secondary" size="sm" className="navBer-btn">
-            Admin
-          </Button>
+          <Link to="/admin">
+            <Button
+              variant="secondary"
+              size="sm"
+              className="button-pd navBer-btn"
+            >
+              Admin
+            </Button>
+          </Link>
         </Nav>
       </Col>
     </Row>
