@@ -1,19 +1,29 @@
 import React from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import eventData from "../../eventData/eventdata";
 import VolunteerLogo from "../VolunteerLogo/VolunteerLogo";
 
 const AdminPanal = () => {
-  const handelEventSubmit = () => {
+  const history = useHistory();
+  const handelEventSubmit = (e) => {
     // const title = document.getElementById("title").value;
     // const data = document.getElementById("data").value;
     // const description = document.getElementById("description").value;
     // const total = { title, description };
-    fetch("https://rocky-fortress-91922.herokuapp.com/addEvent", {
-      method: "POST",
-      headers: { "content-Type": "application/json" },
-      body: JSON.stringify(eventData),
-    });
+    // fetch("https://rocky-fortress-91922.herokuapp.com/addEvent", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(eventData),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //       ;
+    //       history.push("/");
+    //   });
+      e.preventDefault();
+      alert("i work image upload 3rd party multer,,,so event not add now");
+      history.push("/");
   };
 
   return (
