@@ -1,3 +1,6 @@
+a:-webkit-any-link:hover {
+  text-decoration: none;
+}
 .HeaderNavBer-container {
   padding-top: 30px;
   padding-bottom: 30px;

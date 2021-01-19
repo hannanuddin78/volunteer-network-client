@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const EventRegistration = () => {
   const [registerEvent, setRegisterEvent] = useState([]);
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  console.log(registerEvent);
+
   useEffect(() => {
     fetch(
       "https://rocky-fortress-91922.herokuapp.com/seeEvents?email=" +
@@ -41,7 +41,7 @@ const EventRegistration = () => {
       </Row>
       <Row>
         {registerEvent.map((event) => (
-          <Events event={event} updateEvent={updateEvent}></Events>
+          <Events event={event} updateEvent={updateEvent} key={event._id}></Events>
         ))}
       </Row>
     </Container>

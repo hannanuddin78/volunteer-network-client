@@ -11,6 +11,7 @@ import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import AdminPanal from "./Components/AdminPanal/AdminPanal";
 import EventRegistration from "./Components/EventRegistration/EventRegistration";
 import Events from "./Components/Events/Events";
+import NotCreate from "./Components/notCreate/NotCreate";
 
 export const UserContext = createContext();
 
@@ -29,6 +30,12 @@ function App() {
             <Headers></Headers>
             <VolunteerItems></VolunteerItems>
           </Route>
+          <Route exact path="/donation">
+            <NotCreate />
+          </Route>
+          <Route exact path="/blog">
+            <NotCreate />
+          </Route>
           <Route path="/login">
             <VolunteerLogo></VolunteerLogo>
             <Login></Login>
@@ -40,9 +47,9 @@ function App() {
           <Route path="/admin">
             <AdminPanal></AdminPanal>
           </Route>
-          <Route path="/event">
+          <PrivateRoute path="/event">
             <EventRegistration></EventRegistration>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserContext.Provider>

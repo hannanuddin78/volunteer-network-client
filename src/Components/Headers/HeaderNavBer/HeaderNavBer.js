@@ -12,22 +12,14 @@ const HeaderNavBer = () => {
       <Col md={8}>
         <Nav className="menubar-nav header-event-navber float-right">
           <Link to="/home">Home</Link>
-          <Link to="/donation/">Donation</Link>
+          <Link to="/donation">Donation</Link>
           <Link to="/event">Events</Link>
           <Link to="/blog">Blog</Link>
-          <Button
-            variant="primary"
-            size="sm"
-            className="button-pd navBer-btn btn-margin-right"
-          >
+          <Button variant="primary" size="sm" className="button-pd navBer-btn btn-margin-right">
             Register
           </Button>
           <Link to="/admin">
-            <Button
-              variant="secondary"
-              size="sm"
-              className="button-pd navBer-btn"
-            >
+            <Button variant="secondary" size="sm" className="button-pd navBer-btn">
               Admin
             </Button>
           </Link>

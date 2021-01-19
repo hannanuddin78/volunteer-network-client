@@ -36,6 +36,7 @@ const RegisterForm = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
+          console.log(data);
           history.push("/event");
         }
       });

@@ -15,7 +15,7 @@ const VolunteerItems = () => {
     <Container>
       <Row>
         {events.map((event) => (
-          <AllEvents event={event} />
+          <AllEvents event={event} key={event._id} />
         ))}
       </Row>
     </Container>
