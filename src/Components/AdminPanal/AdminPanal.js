@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import VolunteerLogo from "../VolunteerLogo/VolunteerLogo";
 
 const AdminPanal = () => {
@@ -88,57 +88,64 @@ const AdminPanal = () => {
         <Col md={9}>
           <h2 className="event-heading">Add event</h2>
         </Col>
-        
       </Row>
       <Row>
         <Col md={3}>
-          <h6 className="admin-textarea">Volunteer register list</h6>
+          <Link to="/">
+            <h6 className="admin-textarea">Volunteer register list</h6>
+          </Link>
           <p className="admin-textarea">Add event</p>
         </Col>
         <Col md={9}>
-          <Form onSubmit={handleSubmitFile}>
-            <Form.Row>
-              <Form.Group as={Col}>
-                <Form.Label>Event Title</Form.Label>
-                <Form.Control id="title" type="text" placeholder="Enter Title" />
-              </Form.Group>
+          <Row>
+            <Col md={12}>
+              <Form onSubmit={handleSubmitFile}>
+                <Form.Row>
+                  <Form.Group as={Col}>
+                    <Form.Label>Event Title</Form.Label>
+                    <Form.Control id="title" type="text" placeholder="Enter Title" />
+                  </Form.Group>
 
-              <Form.Group as={Col}>
-                <Form.Label>Event Date</Form.Label>
-                <Form.Control id="date" type="text" placeholder="Enter Date" />
-              </Form.Group>
-            </Form.Row>
+                  <Form.Group as={Col}>
+                    <Form.Label>Event Date</Form.Label>
+                    <Form.Control id="date" type="text" placeholder="Enter Date" />
+                  </Form.Group>
+                </Form.Row>
 
-            <Form.Row>
-              <Form.Group as={Col}>
-                <Form.Label>Description</Form.Label>
-                <Form.Control
-                  id="description"
-                  placeholder="Enter Description"
-                  as="textarea"
-                  rows="3"
-                />
-              </Form.Group>
-              <Form.Group as={Col}>
-                <Form.File
-                  id="fileInput"
-                  type="file"
-                  name="image"
-                  onChange={handleFileInputChange}
-                  value={fileInputState}
-                />
-              </Form.Group>
-            </Form.Row>
+                <Form.Row>
+                  <Form.Group as={Col}>
+                    <Form.Label>Description</Form.Label>
+                    <Form.Control
+                      id="description"
+                      placeholder="Enter Description"
+                      as="textarea"
+                      rows="3"
+                    />
+                  </Form.Group>
+                  <Form.Group as={Col}>
+                    <Form.File
+                      id="fileInput"
+                      type="file"
+                      name="image"
+                      onChange={handleFileInputChange}
+                      value={fileInputState}
+                    />
+                  </Form.Group>
+                </Form.Row>
 
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={12} className="ml-5">
-          {previewSource && <img src={previewSource} alt="chosen" style={{ height: "300px" }} />}
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12} className="ml-5">
+              {previewSource && (
+                <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
+              )}
+            </Col>
+          </Row>
         </Col>
       </Row>
     </>

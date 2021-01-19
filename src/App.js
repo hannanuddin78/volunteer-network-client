@@ -10,7 +10,6 @@ import VolunteerLogo from "./Components/VolunteerLogo/VolunteerLogo";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import AdminPanal from "./Components/AdminPanal/AdminPanal";
 import EventRegistration from "./Components/EventRegistration/EventRegistration";
-import Events from "./Components/Events/Events";
 import NotCreate from "./Components/notCreate/NotCreate";
 
 export const UserContext = createContext();
@@ -44,9 +43,9 @@ function App() {
             <VolunteerLogo></VolunteerLogo>
             <RegisterForm></RegisterForm>
           </PrivateRoute>
-          <Route path="/admin">
+          <PrivateRoute path="/admin">
             <AdminPanal></AdminPanal>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/event">
             <EventRegistration></EventRegistration>
           </PrivateRoute>
